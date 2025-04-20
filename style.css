@@ -1,110 +1,112 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212;
-    color: #fff;
-  }
-  
-  nav {
-    background-color: #1e1e1e;
-    padding: 10px 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    overflow-x: auto;
-  }
-  
-  nav button {
-    background-color: #333;
-    border: none;
-    color: #fff;
-    padding: 10px 15px;
-    margin: 5px 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    flex-shrink: 0;
-  }
-  
-  nav button:hover {
-    background-color: #555;
-  }
-  
-  main {
-    padding: 20px;
-    display: flex;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #fff;
+}
+
+nav {
+  background-color: #1e1e1e;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+nav button {
+  background-color: #333;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+  font-size: 1rem;
+}
+
+nav button:hover {
+  background-color: #555;
+}
+
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ficha-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+.ficha {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+}
+
+.ficha h2 {
+  margin-top: 0;
+  font-size: 1.8em;
+  color: #0ff;
+}
+
+.ficha p {
+  margin: 10px 0;
+}
+
+.jogador {
+  max-width: 100%;
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .ficha-container {
     flex-direction: column;
     align-items: center;
   }
-  
-  .ficha-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;
-    width: 100%;
-    max-width: 1200px;
-    box-sizing: border-box;
-  }
-  
-  .ficha {
-    background-color: #1e1e1e;
-    padding: 20px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 600px;
-    box-sizing: border-box;
-  }
-  
-  .ficha h2 {
-    margin-top: 0;
-    font-size: 1.8em;
-    color: #0ff;
-  }
-  
-  .ficha p {
-    margin: 10px 0;
-  }
-  
+
   .jogador {
-    max-width: 100%;
-    width: 300px;
+    width: 90vw;
+    max-width: 300px;
     height: auto;
-    border-radius: 10px;
-    object-fit: contain;
-    display: block;
+    margin-bottom: 20px;
   }
-  
-  /* Responsividade braba */
-  @media (max-width: 768px) {
-    nav {
-      justify-content: flex-start;
-    }
-  
-    .ficha-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .jogador {
-      width: 80vw;
-      max-width: 300px;
-      height: auto;
-      margin: 0 auto;
-    }
-  
-    .ficha {
-      width: 90vw;
-      padding: 15px;
-    }
-  
-    nav button {
-      font-size: 14px;
-      padding: 8px 12px;
-    }
+
+  .ficha {
+    width: 90vw;
+    padding: 15px;
   }
-  
+
+  nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  nav button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
