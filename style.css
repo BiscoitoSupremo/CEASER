@@ -1,112 +1,199 @@
-body {
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #121212;
-  color: #fff;
+  box-sizing: border-box;
 }
 
-nav {
-  background-color: #1e1e1e;
-  padding: 10px;
+body {
+  font-family: 'IM Fell English SC', serif;
+  background-color: #111;
+  color: #fff;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  overflow-x: auto;
+  height: 100vh;
+  transition: background 0.5s, color 0.5s;
 }
 
-nav button {
-  background-color: #333;
-  border: none;
-  color: #fff;
-  padding: 10px 15px;
-  margin: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  white-space: nowrap;
-  font-size: 1rem;
-}
-
-nav button:hover {
-  background-color: #555;
-}
-
-main {
-  padding: 20px;
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.ficha-container {
-  display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
-  flex-wrap: wrap;
+  padding: 2rem;
   width: 100%;
   max-width: 1200px;
-  box-sizing: border-box;
+  text-align: center;
+}
+
+.menu {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.menu button {
+  background: none;
+  border: 2px solid white;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.menu button:hover {
+  background-color: white;
+  color: black;
+}
+
+.player-area {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-photo img {
+  width: 200px;
+  height: auto;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+.player-info {
+  flex: 1;
+  background-color: #222;
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 300px;
+  text-align: center;
 }
 
 .ficha {
-  background-color: #1e1e1e;
-  padding: 20px;
+  background-color: #222;
+  padding: 1rem;
   border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.ficha-imagem {
   width: 100%;
-  max-width: 600px;
-  box-sizing: border-box;
-}
-
-.ficha h2 {
-  margin-top: 0;
-  font-size: 1.8em;
-  color: #0ff;
-}
-
-.ficha p {
-  margin: 10px 0;
-}
-
-.jogador {
-  max-width: 100%;
-  width: 300px;
   height: auto;
-  border-radius: 10px;
-  object-fit: contain;
-  display: block;
+  max-width: 500px;
+  margin-top: 1rem;
+  border-radius: 5px;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .ficha-container {
-    flex-direction: column;
-    align-items: center;
+.section {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 700px;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #222;
+  color: white;
+  border: 1px solid white;
+  resize: vertical;
+}
+
+#dice-result {
+  font-size: 2rem;
+  margin-top: 1rem;
+  text-align: center;
+  display: inline-block;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-top: 20px;
+  opacity: 0;
+  animation: diceRollAnimation 1s ease-out forwards;
+  color: #000;
+}
+
+.mode-switch {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 1.5rem 1rem;
+  border-radius: 10px;
+  border: none;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.mode-switch:hover {
+  background-color: rgb(247, 247, 247);
+}
+
+.dado {
+  font-size: 2rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.dado:hover {
+  transform: rotate(360deg);
+}
+
+.dice-icon {
+  font-size: 3rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+      padding: 1rem;
   }
 
-  .jogador {
-    width: 90vw;
-    max-width: 300px;
-    height: auto;
-    margin-bottom: 20px;
+  .player-area {
+      flex-direction: column;
   }
 
-  .ficha {
-    width: 90vw;
-    padding: 15px;
+  .player-info {
+      max-width: 100%;
   }
 
-  nav {
-    justify-content: flex-start;
-    overflow-x: auto;
+  .ficha-imagem {
+      max-width: 100%;
   }
+}
 
-  nav button {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
+/* Modo Claro*/
+body.light-mode {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+body.light-mode .menu button {
+  background-color: #fff;
+  color: #333;
+  border-color: #ccc;
+}
+
+body.light-mode .menu button:hover {
+  background-color: #ccc;
+  color: #000;
+}
+
+body.light-mode .mode-switch {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+
+body.light-mode .mode-switch:hover {
+  background-color: #363636;
+  color: #ffffff;
 }
